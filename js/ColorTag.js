@@ -35,22 +35,17 @@
           .then(handleResponse)
           .then(function(json){
             var jsonArr = json["clusters"];
-            var hexArr = []; 
+            var hexArr = [];
+            var cluster;
+            for(cluster in jsonArr) {
+              hexArr.push(jsonArr[cluster]["hex"][0]);
+            }
 
-           jsonArr.forEach(function(cluster) {
-              hexArr.push(cluster["hex"][0]);
-            });
-
-            // for(let i=0; i<jsonArr.length; i++){
-            //   hexArr.push(jsonArr[i]["hex"][0]);
-            //
-            // }
-            console.log(hexArr);
+            return hexArr;
           });
     }
 
     function handleResponse(response) {
-      console.log(response);
         if (response.ok) {
             return response.json();
         } else {
