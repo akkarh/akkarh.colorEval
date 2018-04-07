@@ -1,7 +1,12 @@
-fetch('http://api.screenshotlayer.com/api/capture?access_key=ddccf18819be3976a799d69c564d1401&url=document.getElementById('text').value;&format=JPG')
+let web = document.getElementById("url").value;
+web = "https://www.apple.com/";
+
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+let request = "http://api.screenshotlayer.com/api/capture?access_key=ddccf18819be3976a799d69c564d1401&url=" + web + "&format=JPG";
+
+fetch(proxyUrl + request)
 	.then(function(response) {
-		return response.json();
-	})
-	.then(function(myJson) {
-		console.log(myJson);
+		console.log(response.type);
+		return response;
 	});
