@@ -35,7 +35,7 @@
           .then(handleResponse)
           .then(function(json){
             var jsonArr = json["clusters"];
-            var hexArr = [];
+            var hexArr = []; 
 
            jsonArr.forEach(function(cluster) {
               hexArr.push(cluster["hex"][0]);
