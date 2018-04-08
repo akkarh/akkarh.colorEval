@@ -1,7 +1,19 @@
 'use strict';
 
 window.onload = function () {
-    getColors("https://i.imgur.com/OxCuqhw.jpg");
+    let dict = {
+        "https://www.facebook.com/": "https://i.imgur.com/6zrojM1.png",
+        "https://i.imgur.com/QhkQkeU.png": "https://i.imgur.com/QhkQkeU.png",
+        "https://loop.ableton.com/2017/": "https://i.imgur.com/rlR4CVW.png"
+    }
+    let submit = document.querySelector("#submit");
+    let input = "";
+    document.querySelector("#url").addEventListener("input", function () {
+        input = document.querySelector("#url").value;
+    })
+    submit.addEventListener("click", function () {
+        getColors(dict[input]);
+    });
 };
 
 function getColors(url) {
@@ -58,8 +70,6 @@ function displayResults(test, background, foreground) {
     let div = document.getElementById("eval");
     let result = document.createElement("div");
     let innerDiv = document.createElement("div");
-    
-    console.log(test);
 
     let bg = document.createElement("p");
     let fg = document.createElement("p");
@@ -89,11 +99,11 @@ function displayResults(test, background, foreground) {
     ul.appendChild(li2);
     ul.appendChild(li3);
     ul.appendChild(li4);
-    
+
     result.appendChild(bg);
     result.appendChild(fg);
     result.appendChild(ul);
-    
+
     div.appendChild(result);
 }
 
