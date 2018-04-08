@@ -1,8 +1,8 @@
 # Swe-Hacks 2018: colorEval
 ## Determining Colorblind Accessibility of Web Pages
-### _Winner in the Best Implementation Category_
-
 ### By Nicole Riley, Lior Levy, Sai Harshita Neti, Harshitha Akkaraju
+
+### _Winner in the Best Implementation Category_
 
 There are many tools that exist on the internet today for web developers to determine whether their websites are accessible to colorblind people. However, there are not as many tools to analyze the accessibility of webpages by comparing color schemes.
 
