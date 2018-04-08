@@ -1,35 +1,32 @@
-// process the color info and query WebAIM for accessibility info
+'use strict';
 
-// TODO: placeholder for now; replace with actual json result
-let input = {
-    "tags": [
-        {
-            "label": "Green",
-            "color": "#2A5D24"
-        },
-        {
-            "label": "Beige",
-            "color": "#A99670"
-        },
-        {
-            "label": "Gray",
-            "color": "#282523"
-        },
-        {
-            "label": "Brown",
-            "color": "#523E2D"
-        }
-    ]
+window.onload = function () {
+    getColors("https://i.imgur.com/OxCuqhw.jpg");
+};
+
+function getColors(url) {
+    var proxyUrl = 'https://mighty-beach-27822.herokuapp.com/',
+        targetUrl = 'http://mkweb.bcgsc.ca/color-summarizer/?url=' + url + '&precision=medium&json=1'
+    fetch(proxyUrl + targetUrl)
+        .then(handleResponse)
+        .then(function (json) {
+            var jsonArr = json["clusters"];
+            var hexArr = [];
+            var cluster;
+            for (cluster in jsonArr) {
+                hexArr.push(jsonArr[cluster]["hex"][0]);
+            }
+            return hexArr;
+        })
+        .then(parseInput);
 }
 
-let tags = input["tags"];
-let background = getColor(tags[0]);
-
-function parseInput() {
-    let bodyTags = tags.slice(1, tags.length);
+function parseInput(hexValues) {
+    let background = getColor(hexValues[0]);
+    let bodyColors = hexValues.slice(1, hexValues.length);
     // color = foreground color
-    bodyTags.forEach(function (tag) {
-        let color = getColor(tag);
+    bodyColors.forEach(function (hex) {
+        let color = getColor(hex);
         let request = composeRequest(color, background)
         sendRequest(request);
     });
@@ -42,16 +39,15 @@ function composeRequest(foreground, background) {
     return baseURL;
 }
 
-function getColor(tag) {
-    return tag["color"].substring(1);
+function getColor(hex) {
+    return hex.substring(1);
 }
 
 function sendRequest(request) {
-    // TODO: replace this proxy url with swe's heroku server
-    var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    var proxyUrl = "https://mighty-beach-27822.herokuapp.com/";
     fetch(proxyUrl + request)
         .then(handleResponse)
-        .then(function(json) {
+        .then(function (json) {
             console.log(json);
         });
 }
@@ -66,4 +62,3 @@ function handleResponse(response) {
             });
     }
 }
-parseInput();
