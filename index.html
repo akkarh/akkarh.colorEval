@@ -10,17 +10,23 @@ Basic html page to analyze color accessability of webpages. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js "></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="js/ColorTag.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <div>
-        <header class="jumbotron">
-            <h1 class="display-4"> Website Colorblind Accessability Checker </h1>
-            <p class="lead"> Want to figure out if your website or another website on the web is accessable to color blind populations? Provide
+        <header class="jumbotron bg-primary">
+            <h1 class="display-4 text-white"> Website Colorblind Accessability Checker </h1>
+            <p class="lead text-white"> Want to figure out if your website or another website on the web is accessable to color blind populations? Provide
                 the url and we will give you analysis of whether or not your website is accessable. </p>
-            <hr class="my-4">
+            <hr class="my-4 bg-white">
         </header>
     </div>
 
@@ -31,7 +37,7 @@ Basic html page to analyze color accessability of webpages. -->
                 <label for="url">Please enter the website URL </label>
                 <input class="form-control" id="url" type="text" name="website url" aria-describedby="url help" placeholder="example.com"
                 />
-                <button class="btn btn-outline-primary" type="submit" id="submit" value="Input">Submit</button>
+                <button class="btn btn-outline-primary" type="submit" id="submit" value="Input" data-toggle="modal" data-target="#results">Submit</button>
             </div>
         </form>
     </section>
@@ -40,7 +46,33 @@ Basic html page to analyze color accessability of webpages. -->
     <div id="result">
     </div>
 
-    <footer>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="results" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Results</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light">
         <p class="lead text-center">Made by Nicole Riley, Sai Harshita Neti, Lior Levi, and Harshitha Akkaraju
             <br> SWE Hacks 2018
             <br> University of Washingtion </p>
