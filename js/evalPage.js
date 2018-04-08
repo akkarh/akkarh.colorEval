@@ -2,16 +2,19 @@
 
 window.onload = function () {
     let dict = {
-        "https://www.facebook.com/": "https://i.imgur.com/6zrojM1.png",
-        "https://i.imgur.com/QhkQkeU.png": "https://i.imgur.com/QhkQkeU.png",
-        "https://loop.ableton.com/2017/": "https://i.imgur.com/rlR4CVW.png"
+        "https://www.facebook.com/" : "https://i.imgur.com/6zrojM1.png",
+        "https://www.washington.edu/" : "https://i.imgur.com/QhkQkeU.png",
+        "https://loop.ableton.com/2017/" : "https://i.imgur.com/rlR4CVW.png"
     }
     let submit = document.querySelector("#submit");
     let input = "";
     document.querySelector("#url").addEventListener("input", function () {
         input = document.querySelector("#url").value;
+        console.log(input);
     })
     submit.addEventListener("click", function () {
+        console.log(dict);
+        console.log(dict[input]);
         getColors(dict[input]);
     });
 };
