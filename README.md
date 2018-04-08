@@ -1,5 +1,6 @@
-# Swe-Hacks 2018: [colorEval] (https://akkarh.github.io/akkarh.colorEval/)
+# Swe-Hacks 2018: colorEval
 ## Determining Colorblind Accessibility of Web Pages
+#### https://akkarh.github.io/akkarh.colorEval/
 ### By Nicole Riley, Lior Levy, Sai Harshita Neti, Harshitha Akkaraju
 
 ### _Winner in the Best Implementation Category_
