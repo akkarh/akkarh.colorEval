@@ -8,7 +8,10 @@ Basic html page to analyze color accessability of webpages. -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="js/ColorTag.js"></script>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -25,8 +28,9 @@ Basic html page to analyze color accessability of webpages. -->
     <section class="container">
         <form>
             <div class="form-group">
-                <label for="url"> Website URL </label>
-                <input class="form-control" id="url" type="text" name="website url" />
+                <label for="url">Please enter the website URL </label>
+                <input class="form-control" id="url" type="text" name="website url" aria-describedby="url help" placeholder="example.com"
+                />
                 <button class="btn btn-outline-primary" type="submit" id="submit" value="Input">Submit</button>
             </div>
         </form>
@@ -37,8 +41,9 @@ Basic html page to analyze color accessability of webpages. -->
     </div>
 
     <footer>
-        <p> Website made by Nicole Riley, Sai Harshita Neti, Lior Levi, and Harshitha Akkaraju for SWE hacks 2018 at University
-            of Washingtion </p>
+        <p class="lead text-center">Made by Nicole Riley, Sai Harshita Neti, Lior Levi, and Harshitha Akkaraju
+            <br> SWE Hacks 2018
+            <br> University of Washingtion </p>
     </footer>
 
     <script src="js/readPage.js "></script>
