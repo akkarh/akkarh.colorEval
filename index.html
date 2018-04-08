@@ -31,32 +31,25 @@ Basic html page to analyze color accessability of webpages. -->
     </div>
 
     <!--Section for getting user input -->
-    <section class="container">
+    <div class="container">
         <form>
             <div class="form-group">
                 <label for="url">Please enter the website URL </label>
                 <input class="form-control" id="url" type="text" name="website url" aria-describedby="url help" placeholder="example.com"
                 />
-                <button class="btn btn-outline-primary" type="submit" id="submit" value="Input" data-toggle="modal" data-target="#results">Submit</button>
+                <button id="submit" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    Submit
+                </button>
             </div>
         </form>
-    </section>
-
-    <!-- Result div to put the results of whether or not we believe a website is accessable. -->
-    <div id="result">
     </div>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
-
     <!-- Modal -->
-    <div class="modal fade" id="results" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">Results</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Results</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -66,7 +59,6 @@ Basic html page to analyze color accessability of webpages. -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -81,5 +73,4 @@ Basic html page to analyze color accessability of webpages. -->
     <script src="js/readPage.js "></script>
     <script src="js/evalPage.js "></script>
 </body>
-
 </html>
