@@ -28,10 +28,12 @@ Basic html page to analyze color accessability of webpages. -->
                 the url and we will give you an analysis of whether or not your website is accessible under the W3C Web Content
                 Accessibility Guidelines. </p>
             <p class="lead text-white">
-                This application looks at two different levels to determine accessibility: level AA (which requires a contrast ratio greater
-                than or equal to 4.5:1 for normal text and 3:1 for large text) and level AAA (which requires a contrast ratio
-                greater than or equal to 7:1 for normal text and 4.5:1 for large text)
+                colorEval looks at two different levels to determine accessibility:
             </p>
+            <ul class="lead text-white">
+                <li>Level AA: Requires a contrast ratio greater than or equal to 4.5:1 for normal text and 3:1 for large text</li>
+                <li>Level AAA: Requires a contrast ratio greater than or equal to 7:1 for normal text and 4.5:1 for large text</li>
+            </ul>
             <hr class="my-4 bg-white">
         </header>
     </div>
@@ -55,7 +57,7 @@ Basic html page to analyze color accessability of webpages. -->
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">Results</h5>
+                    <h5 class="modal-title text-secondary" id="modal-title">Results</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

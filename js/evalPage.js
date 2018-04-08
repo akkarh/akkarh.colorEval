@@ -10,11 +10,10 @@ window.onload = function () {
     let input = "";
     document.querySelector("#url").addEventListener("input", function () {
         input = document.querySelector("#url").value;
-        console.log(input);
     })
     submit.addEventListener("click", function () {
-        console.log(dict);
-        console.log(dict[input]);
+        let title = document.querySelector("#modal-title");
+        title.textContent = "Results for " + input;
         getColors(dict[input]);
     });
 };
