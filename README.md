@@ -25,7 +25,7 @@ Please use the following links to explore our tool:
 * https://www.washington.edu/
 * https://loop.ableton.com/2017/
 
-Do checkout colorEval at: https://akkarh.github.io/akkarh.colorEval.github.io/
+Do checkout colorEval at: https://akkarh.github.io/akkarh.colorEval/
 
 ### APIs Used
 * [Image color summarizer](http://mkweb.bcgsc.ca/color-summarizer/)
