@@ -7,3 +7,11 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.pass {
+    color: #0b6623;
+}
+
+.fail {
+    color: #c21807;
+}
